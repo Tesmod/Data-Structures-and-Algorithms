@@ -32,6 +32,18 @@ class MyArray {
         delete this.data[this.length - 1]
         this.length--
         return firstElement
+    } 
+
+    delete(index){
+        const freshIndex = this.data[index]
+
+        for (let i = index; i < this.length - 1; i++) {
+            this.data[i] = this.data[i + 1]
+        }
+
+        delete this.data[this.length - 1]
+        this.length--
+        return freshIndex
     }
 }
 
@@ -39,10 +51,10 @@ const myNewArray = new MyArray()
 myNewArray.push('apple')
 myNewArray.push('mango')
 myNewArray.push('2')
-myNewArray.push('2')
-// myNewArray.pop()
-myNewArray.shift()
+// myNewArray.pop() 
+// myNewArray.shift()
 // console.log(myNewArray.get('0'))
 console.log(myNewArray);
-console.log(myNewArray.shift());
+// console.log(myNewArray.delete(1)); 
+console.log(myNewArray.delete(1));
 console.log(myNewArray);
